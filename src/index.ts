@@ -2,13 +2,12 @@ import express, { Request, Response } from "express";
 import { catalog, outboundOrders, inboundOrders } from "./catalog";
 import { findOrder } from "./helpers";
 import { Order, Item, OrderStatus } from "./types/Order";
-import cors from "cors";
-
+// import cors from "cors";
 const app = express();
 const port = 3000;
 
 // Middleware
-app.use(cors()); // Enable CORS for all routes
+// app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
 
 // used by sales rep to see all the products
