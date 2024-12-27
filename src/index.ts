@@ -8,22 +8,12 @@ const port = 3000;
 
 // Middleware
 // CORS configuration
-const allowedOrigins = [
-    "http://192.168.2.14:3001", // Local Next.js app
-    "https://warehouse-lac.vercel.app/", // Deployed Next.js app (replace with actual domain)
-];
+// const allowedOrigins = [
+//     "http://192.168.2.14:3001", // Local Next.js app
+//     "https://warehouse-lac.vercel.app/", // Deployed Next.js app (replace with actual domain)
+// ];
 
-app.use(
-    cors({
-        origin: (origin, callback) => {
-            if (!origin || allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("Not allowed by CORS"));
-            }
-        },
-    })
-);
+app.use(cors());
 
 // app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
